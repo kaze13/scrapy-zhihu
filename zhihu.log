@@ -1,0 +1,187 @@
+2014-10-20 18:21:26+0800 [scrapy] INFO: Scrapy 0.24.4 started (bot: zhihu)
+2014-10-20 18:21:26+0800 [scrapy] INFO: Optional features available: ssl, http11
+2014-10-20 18:21:26+0800 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'zhihu.spiders', 'LOG_LEVEL': 'INFO', 'CONCURRENT_REQUESTS': 1, 'RETRY_ENABLED': False, 'SPIDER_MODULES': ['zhihu.spiders'], 'BOT_NAME': 'zhihu', 'DOWNLOAD_TIMEOUT': 15, 'LOG_FILE': 'zhihu.log', 'DOWNLOAD_DELAY': 3}
+2014-10-20 18:21:26+0800 [scrapy] INFO: Enabled extensions: LogStats, TelnetConsole, CloseSpider, WebService, CoreStats, SpiderState
+2014-10-20 18:21:26+0800 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, CustomUserAgentMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2014-10-20 18:21:26+0800 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2014-10-20 18:21:26+0800 [scrapy] INFO: Enabled item pipelines: MongoDBPipeline
+2014-10-20 18:21:26+0800 [zhihu_user] INFO: Spider opened
+2014-10-20 18:21:26+0800 [zhihu_user] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2014-10-20 18:21:35+0800 [zhihu_user] INFO: Closing spider (finished)
+2014-10-20 18:21:35+0800 [zhihu_user] INFO: Dumping Scrapy stats:
+	{'downloader/request_bytes': 1078,
+	 'downloader/request_count': 3,
+	 'downloader/request_method_count/GET': 2,
+	 'downloader/request_method_count/POST': 1,
+	 'downloader/response_bytes': 9416,
+	 'downloader/response_count': 3,
+	 'downloader/response_status_count/200': 1,
+	 'downloader/response_status_count/302': 1,
+	 'downloader/response_status_count/400': 1,
+	 'finish_reason': 'finished',
+	 'finish_time': datetime.datetime(2014, 10, 20, 10, 21, 35, 613624),
+	 'log_count/INFO': 7,
+	 'request_depth_max': 1,
+	 'response_received_count': 2,
+	 'scheduler/dequeued': 3,
+	 'scheduler/dequeued/memory': 3,
+	 'scheduler/enqueued': 3,
+	 'scheduler/enqueued/memory': 3,
+	 'start_time': datetime.datetime(2014, 10, 20, 10, 21, 26, 536107)}
+2014-10-20 18:21:35+0800 [zhihu_user] INFO: Spider closed (finished)
+2014-10-20 18:21:46+0800 [scrapy] INFO: Scrapy 0.24.4 started (bot: zhihu)
+2014-10-20 18:21:46+0800 [scrapy] INFO: Optional features available: ssl, http11
+2014-10-20 18:21:46+0800 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'zhihu.spiders', 'LOG_LEVEL': 'INFO', 'CONCURRENT_REQUESTS': 1, 'RETRY_ENABLED': False, 'SPIDER_MODULES': ['zhihu.spiders'], 'BOT_NAME': 'zhihu', 'DOWNLOAD_TIMEOUT': 15, 'LOG_FILE': 'zhihu.log', 'DOWNLOAD_DELAY': 3}
+2014-10-20 18:21:46+0800 [scrapy] INFO: Enabled extensions: LogStats, TelnetConsole, CloseSpider, WebService, CoreStats, SpiderState
+2014-10-20 18:21:47+0800 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, CustomUserAgentMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2014-10-20 18:21:47+0800 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2014-10-20 18:21:47+0800 [scrapy] INFO: Enabled item pipelines: MongoDBPipeline
+2014-10-20 18:21:47+0800 [zhihu_user] INFO: Spider opened
+2014-10-20 18:21:47+0800 [zhihu_user] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2014-10-20 18:21:54+0800 [zhihu_user] INFO: Closing spider (finished)
+2014-10-20 18:21:54+0800 [zhihu_user] INFO: Dumping Scrapy stats:
+	{'downloader/request_bytes': 1109,
+	 'downloader/request_count': 3,
+	 'downloader/request_method_count/GET': 2,
+	 'downloader/request_method_count/POST': 1,
+	 'downloader/response_bytes': 9463,
+	 'downloader/response_count': 3,
+	 'downloader/response_status_count/200': 1,
+	 'downloader/response_status_count/302': 1,
+	 'downloader/response_status_count/400': 1,
+	 'finish_reason': 'finished',
+	 'finish_time': datetime.datetime(2014, 10, 20, 10, 21, 54, 513984),
+	 'log_count/INFO': 7,
+	 'request_depth_max': 1,
+	 'response_received_count': 2,
+	 'scheduler/dequeued': 3,
+	 'scheduler/dequeued/memory': 3,
+	 'scheduler/enqueued': 3,
+	 'scheduler/enqueued/memory': 3,
+	 'start_time': datetime.datetime(2014, 10, 20, 10, 21, 47, 21952)}
+2014-10-20 18:21:54+0800 [zhihu_user] INFO: Spider closed (finished)
+2014-10-20 18:22:28+0800 [scrapy] INFO: Scrapy 0.24.4 started (bot: zhihu)
+2014-10-20 18:22:28+0800 [scrapy] INFO: Optional features available: ssl, http11
+2014-10-20 18:22:28+0800 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'zhihu.spiders', 'LOG_LEVEL': 'INFO', 'CONCURRENT_REQUESTS': 1, 'RETRY_ENABLED': False, 'SPIDER_MODULES': ['zhihu.spiders'], 'BOT_NAME': 'zhihu', 'DOWNLOAD_TIMEOUT': 15, 'LOG_FILE': 'zhihu.log', 'DOWNLOAD_DELAY': 3}
+2014-10-20 18:22:28+0800 [scrapy] INFO: Enabled extensions: LogStats, TelnetConsole, CloseSpider, WebService, CoreStats, SpiderState
+2014-10-20 18:22:28+0800 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, CustomUserAgentMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2014-10-20 18:22:28+0800 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2014-10-20 18:22:28+0800 [scrapy] INFO: Enabled item pipelines: MongoDBPipeline
+2014-10-20 18:22:28+0800 [zhihu_user] INFO: Spider opened
+2014-10-20 18:22:29+0800 [zhihu_user] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2014-10-20 18:22:34+0800 [zhihu_user] INFO: Closing spider (finished)
+2014-10-20 18:22:34+0800 [zhihu_user] INFO: Dumping Scrapy stats:
+	{'downloader/request_bytes': 1206,
+	 'downloader/request_count': 3,
+	 'downloader/request_method_count/GET': 2,
+	 'downloader/request_method_count/POST': 1,
+	 'downloader/response_bytes': 11772,
+	 'downloader/response_count': 3,
+	 'downloader/response_status_count/200': 1,
+	 'downloader/response_status_count/302': 1,
+	 'downloader/response_status_count/400': 1,
+	 'finish_reason': 'finished',
+	 'finish_time': datetime.datetime(2014, 10, 20, 10, 22, 34, 570695),
+	 'log_count/INFO': 7,
+	 'request_depth_max': 1,
+	 'response_received_count': 2,
+	 'scheduler/dequeued': 3,
+	 'scheduler/dequeued/memory': 3,
+	 'scheduler/enqueued': 3,
+	 'scheduler/enqueued/memory': 3,
+	 'start_time': datetime.datetime(2014, 10, 20, 10, 22, 29, 3963)}
+2014-10-20 18:22:34+0800 [zhihu_user] INFO: Spider closed (finished)
+2014-10-20 18:23:28+0800 [scrapy] INFO: Scrapy 0.24.4 started (bot: zhihu)
+2014-10-20 18:23:28+0800 [scrapy] INFO: Optional features available: ssl, http11
+2014-10-20 18:23:28+0800 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'zhihu.spiders', 'LOG_LEVEL': 'INFO', 'CONCURRENT_REQUESTS': 1, 'RETRY_ENABLED': False, 'SPIDER_MODULES': ['zhihu.spiders'], 'BOT_NAME': 'zhihu', 'DOWNLOAD_TIMEOUT': 15, 'LOG_FILE': 'zhihu.log', 'DOWNLOAD_DELAY': 3}
+2014-10-20 18:23:28+0800 [scrapy] INFO: Enabled extensions: LogStats, TelnetConsole, CloseSpider, WebService, CoreStats, SpiderState
+2014-10-20 18:23:29+0800 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, CustomUserAgentMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2014-10-20 18:23:29+0800 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2014-10-20 18:23:29+0800 [scrapy] INFO: Enabled item pipelines: MongoDBPipeline
+2014-10-20 18:23:42+0800 [zhihu_user] INFO: Spider opened
+2014-10-20 18:23:42+0800 [zhihu_user] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2014-10-20 18:26:46+0800 [zhihu_user] INFO: Crawled 1 pages (at 1 pages/min), scraped 0 items (at 0 items/min)
+2014-10-20 18:26:50+0800 [zhihu_user] INFO: Closing spider (finished)
+2014-10-20 18:26:50+0800 [zhihu_user] INFO: Dumping Scrapy stats:
+	{'downloader/request_bytes': 1145,
+	 'downloader/request_count': 3,
+	 'downloader/request_method_count/GET': 2,
+	 'downloader/request_method_count/POST': 1,
+	 'downloader/response_bytes': 9426,
+	 'downloader/response_count': 3,
+	 'downloader/response_status_count/200': 1,
+	 'downloader/response_status_count/302': 1,
+	 'downloader/response_status_count/400': 1,
+	 'finish_reason': 'finished',
+	 'finish_time': datetime.datetime(2014, 10, 20, 10, 26, 50, 298031),
+	 'log_count/INFO': 8,
+	 'request_depth_max': 1,
+	 'response_received_count': 2,
+	 'scheduler/dequeued': 3,
+	 'scheduler/dequeued/memory': 3,
+	 'scheduler/enqueued': 3,
+	 'scheduler/enqueued/memory': 3,
+	 'start_time': datetime.datetime(2014, 10, 20, 10, 23, 42, 404756)}
+2014-10-20 18:26:50+0800 [zhihu_user] INFO: Spider closed (finished)
+2014-10-20 18:27:00+0800 [scrapy] INFO: Scrapy 0.24.4 started (bot: zhihu)
+2014-10-20 18:27:00+0800 [scrapy] INFO: Optional features available: ssl, http11
+2014-10-20 18:27:00+0800 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'zhihu.spiders', 'LOG_LEVEL': 'INFO', 'CONCURRENT_REQUESTS': 1, 'RETRY_ENABLED': False, 'SPIDER_MODULES': ['zhihu.spiders'], 'BOT_NAME': 'zhihu', 'DOWNLOAD_TIMEOUT': 15, 'LOG_FILE': 'zhihu.log', 'DOWNLOAD_DELAY': 3}
+2014-10-20 18:27:00+0800 [scrapy] INFO: Enabled extensions: LogStats, TelnetConsole, CloseSpider, WebService, CoreStats, SpiderState
+2014-10-20 18:27:00+0800 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, CustomUserAgentMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2014-10-20 18:27:00+0800 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2014-10-20 18:27:00+0800 [scrapy] INFO: Enabled item pipelines: MongoDBPipeline
+2014-10-20 18:27:00+0800 [zhihu_user] INFO: Spider opened
+2014-10-20 18:27:00+0800 [zhihu_user] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2014-10-20 18:27:04+0800 [zhihu_user] INFO: Closing spider (finished)
+2014-10-20 18:27:04+0800 [zhihu_user] INFO: Dumping Scrapy stats:
+	{'downloader/request_bytes': 1195,
+	 'downloader/request_count': 3,
+	 'downloader/request_method_count/GET': 2,
+	 'downloader/request_method_count/POST': 1,
+	 'downloader/response_bytes': 9439,
+	 'downloader/response_count': 3,
+	 'downloader/response_status_count/200': 1,
+	 'downloader/response_status_count/302': 1,
+	 'downloader/response_status_count/400': 1,
+	 'finish_reason': 'finished',
+	 'finish_time': datetime.datetime(2014, 10, 20, 10, 27, 4, 704932),
+	 'log_count/INFO': 7,
+	 'request_depth_max': 1,
+	 'response_received_count': 2,
+	 'scheduler/dequeued': 3,
+	 'scheduler/dequeued/memory': 3,
+	 'scheduler/enqueued': 3,
+	 'scheduler/enqueued/memory': 3,
+	 'start_time': datetime.datetime(2014, 10, 20, 10, 27, 0, 119174)}
+2014-10-20 18:27:04+0800 [zhihu_user] INFO: Spider closed (finished)
+2014-10-20 18:27:17+0800 [scrapy] INFO: Scrapy 0.24.4 started (bot: zhihu)
+2014-10-20 18:27:17+0800 [scrapy] INFO: Optional features available: ssl, http11
+2014-10-20 18:27:17+0800 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'zhihu.spiders', 'LOG_LEVEL': 'INFO', 'CONCURRENT_REQUESTS': 1, 'RETRY_ENABLED': False, 'SPIDER_MODULES': ['zhihu.spiders'], 'BOT_NAME': 'zhihu', 'DOWNLOAD_TIMEOUT': 15, 'LOG_FILE': 'zhihu.log', 'DOWNLOAD_DELAY': 3}
+2014-10-20 18:27:17+0800 [scrapy] INFO: Enabled extensions: LogStats, TelnetConsole, CloseSpider, WebService, CoreStats, SpiderState
+2014-10-20 18:27:17+0800 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, CustomUserAgentMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2014-10-20 18:27:17+0800 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2014-10-20 18:27:17+0800 [scrapy] INFO: Enabled item pipelines: MongoDBPipeline
+2014-10-20 18:27:17+0800 [zhihu_user] INFO: Spider opened
+2014-10-20 18:27:17+0800 [zhihu_user] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2014-10-20 18:27:26+0800 [zhihu_user] INFO: Closing spider (finished)
+2014-10-20 18:27:26+0800 [zhihu_user] INFO: Dumping Scrapy stats:
+	{'downloader/request_bytes': 1257,
+	 'downloader/request_count': 3,
+	 'downloader/request_method_count/GET': 2,
+	 'downloader/request_method_count/POST': 1,
+	 'downloader/response_bytes': 9425,
+	 'downloader/response_count': 3,
+	 'downloader/response_status_count/200': 1,
+	 'downloader/response_status_count/302': 1,
+	 'downloader/response_status_count/400': 1,
+	 'finish_reason': 'finished',
+	 'finish_time': datetime.datetime(2014, 10, 20, 10, 27, 26, 349213),
+	 'log_count/INFO': 7,
+	 'request_depth_max': 1,
+	 'response_received_count': 2,
+	 'scheduler/dequeued': 3,
+	 'scheduler/dequeued/memory': 3,
+	 'scheduler/enqueued': 3,
+	 'scheduler/enqueued/memory': 3,
+	 'start_time': datetime.datetime(2014, 10, 20, 10, 27, 17, 985553)}
+2014-10-20 18:27:26+0800 [zhihu_user] INFO: Spider closed (finished)
