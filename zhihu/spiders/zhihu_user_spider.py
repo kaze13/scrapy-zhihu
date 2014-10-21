@@ -117,7 +117,7 @@ class ZhihuLoginSpider(CrawlSpider):
         _xsrf = ''.join(selector.xpath('//input[@name="_xsrf"]/@value').extract())
         hash_id = ''.join(selector.xpath('//div[@class="zm-profile-header-op-btns clearfix"]/button/@data-id').extract())
 
-        yield user
+
 
         # questions
         num = int(user['ask_num']) if "ask_num" in user.keys() else 0
@@ -137,6 +137,7 @@ class ZhihuLoginSpider(CrawlSpider):
 
         self.user_names.append(user['username'])
         print 'NEW:%s' % user['username']
+        yield user
 
         num = int(followee_num) if followee_num else 0
         page_num = num/20

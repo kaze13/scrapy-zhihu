@@ -306,3 +306,62 @@
 2014-10-21 11:37:20+0800 [zhihu_user] INFO: Spider opened
 2014-10-21 11:37:20+0800 [zhihu_user] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
 2014-10-21 11:38:20+0800 [zhihu_user] INFO: Crawled 14 pages (at 14 pages/min), scraped 11 items (at 11 items/min)
+2014-10-21 11:39:20+0800 [zhihu_user] INFO: Crawled 30 pages (at 16 pages/min), scraped 27 items (at 16 items/min)
+2014-10-21 11:40:20+0800 [zhihu_user] INFO: Crawled 46 pages (at 16 pages/min), scraped 42 items (at 15 items/min)
+2014-10-21 11:47:34+0800 [scrapy] INFO: Scrapy 0.24.4 started (bot: zhihu)
+2014-10-21 11:47:34+0800 [scrapy] INFO: Optional features available: ssl, http11
+2014-10-21 11:47:34+0800 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'zhihu.spiders', 'LOG_LEVEL': 'INFO', 'CONCURRENT_REQUESTS': 1, 'RETRY_ENABLED': False, 'SPIDER_MODULES': ['zhihu.spiders'], 'BOT_NAME': 'zhihu', 'DOWNLOAD_TIMEOUT': 15, 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'LOG_FILE': 'zhihu.log', 'DOWNLOAD_DELAY': 3}
+2014-10-21 11:47:34+0800 [scrapy] INFO: Enabled extensions: LogStats, TelnetConsole, CloseSpider, WebService, CoreStats, SpiderState
+2014-10-21 11:47:34+0800 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, CustomUserAgentMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2014-10-21 11:47:35+0800 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2014-10-21 11:47:35+0800 [scrapy] INFO: Enabled item pipelines: RedisPipeline, MongoDBPipeline
+2014-10-21 11:47:37+0800 [zhihu_user] INFO: Spider opened
+2014-10-21 11:47:37+0800 [zhihu_user] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2014-10-21 11:48:51+0800 [zhihu_user] INFO: Crawled 1 pages (at 1 pages/min), scraped 1 items (at 1 items/min)
+2014-10-21 11:49:41+0800 [scrapy] INFO: Scrapy 0.24.4 started (bot: zhihu)
+2014-10-21 11:49:41+0800 [scrapy] INFO: Optional features available: ssl, http11
+2014-10-21 11:49:41+0800 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'zhihu.spiders', 'LOG_LEVEL': 'INFO', 'CONCURRENT_REQUESTS': 1, 'RETRY_ENABLED': False, 'SPIDER_MODULES': ['zhihu.spiders'], 'BOT_NAME': 'zhihu', 'DOWNLOAD_TIMEOUT': 15, 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'LOG_FILE': 'zhihu.log', 'DOWNLOAD_DELAY': 3}
+2014-10-21 11:49:42+0800 [scrapy] INFO: Enabled extensions: LogStats, TelnetConsole, CloseSpider, WebService, CoreStats, SpiderState
+2014-10-21 11:49:42+0800 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, CustomUserAgentMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2014-10-21 11:49:42+0800 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2014-10-21 11:49:42+0800 [scrapy] INFO: Enabled item pipelines: RedisPipeline, MongoDBPipeline
+2014-10-21 11:49:42+0800 [zhihu_user] INFO: Spider opened
+2014-10-21 11:49:42+0800 [zhihu_user] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2014-10-21 11:50:29+0800 [scrapy] INFO: Scrapy 0.24.4 started (bot: zhihu)
+2014-10-21 11:50:29+0800 [scrapy] INFO: Optional features available: ssl, http11
+2014-10-21 11:50:29+0800 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'zhihu.spiders', 'LOG_LEVEL': 'INFO', 'CONCURRENT_REQUESTS': 1, 'RETRY_ENABLED': False, 'SPIDER_MODULES': ['zhihu.spiders'], 'BOT_NAME': 'zhihu', 'DOWNLOAD_TIMEOUT': 15, 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'LOG_FILE': 'zhihu.log', 'DOWNLOAD_DELAY': 3}
+2014-10-21 11:50:29+0800 [scrapy] INFO: Enabled extensions: LogStats, TelnetConsole, CloseSpider, WebService, CoreStats, SpiderState
+2014-10-21 11:50:29+0800 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, CustomUserAgentMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2014-10-21 11:50:29+0800 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2014-10-21 11:50:29+0800 [scrapy] INFO: Enabled item pipelines: RedisPipeline, MongoDBPipeline
+2014-10-21 11:50:29+0800 [zhihu_user] INFO: Spider opened
+2014-10-21 11:50:29+0800 [zhihu_user] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2014-10-21 11:50:58+0800 [scrapy] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2014-10-21 11:50:58+0800 [zhihu_user] INFO: Closing spider (shutdown)
+2014-10-21 11:50:58+0800 [scrapy] INFO: Received SIGINT twice, forcing unclean shutdown
+2014-10-21 11:51:19+0800 [scrapy] INFO: Scrapy 0.24.4 started (bot: zhihu)
+2014-10-21 11:51:19+0800 [scrapy] INFO: Optional features available: ssl, http11
+2014-10-21 11:51:19+0800 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'zhihu.spiders', 'LOG_LEVEL': 'INFO', 'CONCURRENT_REQUESTS': 1, 'RETRY_ENABLED': False, 'SPIDER_MODULES': ['zhihu.spiders'], 'BOT_NAME': 'zhihu', 'DOWNLOAD_TIMEOUT': 15, 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'LOG_FILE': 'zhihu.log', 'DOWNLOAD_DELAY': 3}
+2014-10-21 11:51:19+0800 [scrapy] INFO: Enabled extensions: LogStats, TelnetConsole, CloseSpider, WebService, CoreStats, SpiderState
+2014-10-21 11:51:19+0800 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, CustomUserAgentMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2014-10-21 11:51:19+0800 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2014-10-21 11:51:19+0800 [scrapy] INFO: Enabled item pipelines: RedisPipeline, MongoDBPipeline
+2014-10-21 11:51:19+0800 [zhihu_user] INFO: Spider opened
+2014-10-21 11:51:19+0800 [zhihu_user] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2014-10-21 11:52:19+0800 [zhihu_user] INFO: Crawled 14 pages (at 14 pages/min), scraped 11 items (at 11 items/min)
+2014-10-21 11:53:19+0800 [zhihu_user] INFO: Crawled 30 pages (at 16 pages/min), scraped 27 items (at 16 items/min)
+2014-10-21 11:54:19+0800 [zhihu_user] INFO: Crawled 45 pages (at 15 pages/min), scraped 41 items (at 14 items/min)
+2014-10-21 11:55:19+0800 [zhihu_user] INFO: Crawled 61 pages (at 16 pages/min), scraped 53 items (at 12 items/min)
+2014-10-21 11:56:19+0800 [zhihu_user] INFO: Crawled 79 pages (at 18 pages/min), scraped 53 items (at 0 items/min)
+2014-10-21 11:56:31+0800 [scrapy] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2014-10-21 11:56:31+0800 [zhihu_user] INFO: Closing spider (shutdown)
+2014-10-21 11:56:31+0800 [scrapy] INFO: Received SIGINT twice, forcing unclean shutdown
+2014-10-21 11:56:33+0800 [scrapy] INFO: Scrapy 0.24.4 started (bot: zhihu)
+2014-10-21 11:56:33+0800 [scrapy] INFO: Optional features available: ssl, http11
+2014-10-21 11:56:33+0800 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'zhihu.spiders', 'LOG_LEVEL': 'INFO', 'CONCURRENT_REQUESTS': 1, 'RETRY_ENABLED': False, 'SPIDER_MODULES': ['zhihu.spiders'], 'BOT_NAME': 'zhihu', 'DOWNLOAD_TIMEOUT': 15, 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'LOG_FILE': 'zhihu.log'}
+2014-10-21 11:56:33+0800 [scrapy] INFO: Enabled extensions: LogStats, TelnetConsole, CloseSpider, WebService, CoreStats, SpiderState
+2014-10-21 11:56:33+0800 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, CustomUserAgentMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2014-10-21 11:56:33+0800 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2014-10-21 11:56:33+0800 [scrapy] INFO: Enabled item pipelines: RedisPipeline, MongoDBPipeline
+2014-10-21 11:56:33+0800 [zhihu_user] INFO: Spider opened
+2014-10-21 11:56:33+0800 [zhihu_user] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
