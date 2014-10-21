@@ -32,9 +32,31 @@ DOWNLOAD_DELAY = 3
 DOWNLOAD_TIMEOUT = 15
 RANDOMIZE_DOWNLOAD_DELAY = True
 
+
+# Enables scheduling storing requests queue in redis.
+SCHEDULER = "scrapy_redis.scheduler.Scheduler"
+
+# Don't cleanup redis queues, allows to pause/resume crawls.
+SCHEDULER_PERSIST = True
+
+# Schedule requests using a priority queue. (default)
+SCHEDULER_QUEUE_CLASS = 'scrapy_redis.queue.SpiderPriorityQueue'
+
+# Schedule requests using a queue (FIFO).
+# SCHEDULER_QUEUE_CLASS = 'scrapy_redis.queue.SpiderQueue'
+
+# Schedule requests using a stack (LIFO).
+# SCHEDULER_QUEUE_CLASS = 'scrapy_redis.queue.SpiderStack'
+
+# Max idle time to prevent the spider from being closed when distributed crawling.
+# This only works if queue class is SpiderQueue or SpiderStack,
+# and may also block the same time when your spider start at the first time (because the queue is empty).
+# SCHEDULER_IDLE_BEFORE_CLOSE = 10
+
 ITEM_PIPELINES = {
     #'zhihu.pipelines.DoNothingPipeline': 300,
     #'zhihu.pipelines.JsonWithEncodingPipeline': 300,
+    'scrapy_redis.pipelines.RedisPipeline':200,
     'zhihu.pipelines.MongoDBPipeline': 300,
     }
 
@@ -42,12 +64,11 @@ DOWNLOADER_MIDDLEWARES = {
     #'zhihu.misc.middleware.CustomHttpProxyMiddleware': 543,
     'zhihu.misc.middleware.CustomUserAgentMiddleware': 545,
     }
+# Specify the host and port to use when connecting to Redis (optional).
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379
 
-'''
-SCHEDULER = "zhihu.scrapy_redis.scheduler.Scheduler"
-SCHEDULER_PERSIST = False
-SCHEDULER_QUEUE_CLASS = 'zhihu.scrapy_redis.queue.SpiderPriorityQueue'
-'''
+
 
 HEADER={
     "Host": "www.zhihu.com",
