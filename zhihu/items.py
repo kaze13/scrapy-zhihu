@@ -7,49 +7,11 @@
 
 from scrapy.item import Item, Field
 
-class GithubUserItem(Item):
-    _id=Field()
-    url=Field()
-    user_id  = Field()
-    username = Field()
-    nickname = Field()
-    type = Field()
-    location = Field()
-    update_time = Field()
-    email=Field()
-    website=Field()
-    member_num=Field()
-
-    company = Field()
-    join_date = Field()
-    followee_num = Field()
-    follower_num = Field()
-    star_num = Field()
-    repo_num = Field()
-    org_num = Field()
-
-class GithubRepoItem(Item):
-    _id=Field()
-    url=Field()
-    username = Field()
-    name = Field()
-    description = Field()
-    update_date = Field()
-    star_num = Field()
-    watch_num = Field()
-    fork_num = Field()
-    language = Field()
-    type = Field() #Mirrors Forks Sources
-    commit_num = Field()
-    branch_num = Field()
-    tag_num = Field()
-    pull_num = Field()
-    issue_num = Field()
 
 class ZhihuUserItem(Item):
-    _id=Field()
-    url=Field()
-    img=Field()
+    _id = Field()
+    url = Field()
+    img = Field()
     username = Field()
     nickname = Field()
     location = Field()
@@ -78,52 +40,41 @@ class ZhihuUserItem(Item):
     view_num = Field()
     update_time = Field()
 
+
 class ZhihuAskItem(Item):
-    _id=Field()
+    _id = Field()
     username = Field()
-    url=Field()
+    url = Field()
     view_num = Field()
-    title= Field()
-    answer_num= Field()
-    follower_num= Field()
+    title = Field()
+    comment_count = Field()
+    recent_active_time = Field()
+    answer_num = Field()
+    follower_num = Field()
+
 
 class ZhihuAnswerItem(Item):
-    _id=Field()
+    _id = Field()
     username = Field()
-    url=Field()
+    url = Field()
     ask_title = Field()
     ask_url = Field()
     agree_num = Field()
     summary = Field()
     content = Field()
     comment_num = Field()
+    last_update_time = Field()
+
 
 class ZhihuFolloweesItem(Item):
-    _id=Field()
+    _id = Field()
     username = Field()
     followees = Field()
 
+
 class ZhihuFollowersItem(Item):
-    _id=Field()
+    _id = Field()
     username = Field()
     followers = Field()
 
 
-class DoubanbookItem(Item):
-    # define the fields for your item here like:
-    # name = Field()
-    title = Field()
-    link = Field()
-    desc = Field()
-    num = Field()
-
-
-class DoubanSubjectItem(Item):
-    title = Field()
-    link = Field()
-    info = Field()
-    rate = Field()
-    votes = Field()
-    content_intro = Field()
-    author_intro = Field()
-    tags = Field()
