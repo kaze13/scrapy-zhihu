@@ -38,9 +38,11 @@ class ZhihuLoginSpider(CrawlSpider):
         Rule(SgmlLinkExtractor(allow=("/people/$", )), callback='parse_user')
     )
 
-    def __init__(self, *a, **kwargs):
+    def __init__(self,proxy, *a, **kwargs):
         super(ZhihuLoginSpider, self).__init__(*a, **kwargs)
         self.user_names = []
+        if(proxy):
+            settings.set('PROXY', proxy)
 
 
     def start_requests(self):

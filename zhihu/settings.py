@@ -10,8 +10,11 @@
 
 BOT_NAME = 'zhihu'
 
-USERNAME = 'cml_hawke0@163.com'
-PASSWORD = '56121353'
+# USERNAME = 'cml_hawke0@163.com'
+# PASSWORD = '56121353'
+
+USERNAME = 'yyluo_sep.27@hotmail.com'
+PASSWORD = 'damiyy66526844'
 
 SPIDER_MODULES = ['zhihu.spiders']
 NEWSPIDER_MODULE = 'zhihu.spiders'
@@ -64,7 +67,7 @@ ITEM_PIPELINES = {
     }
 
 DOWNLOADER_MIDDLEWARES = {
-    #'zhihu.misc.middleware.CustomHttpProxyMiddleware': 543,
+    'zhihu.misc.middleware.CustomHttpProxyMiddleware': 543,
     'zhihu.misc.middleware.CustomUserAgentMiddleware': 545,
     }
 # Specify the host and port to use when connecting to Redis (optional).
