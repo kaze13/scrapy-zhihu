@@ -10,6 +10,9 @@
 
 BOT_NAME = 'zhihu'
 
+USERNAME = 'cml_hawke0@163.com'
+PASSWORD = '56121353'
+
 SPIDER_MODULES = ['zhihu.spiders']
 NEWSPIDER_MODULE = 'zhihu.spiders'
 
@@ -28,30 +31,30 @@ DNSCACHE_ENABLED = True
 
 COOKIES_DEBUG = False
 
-DOWNLOAD_DELAY = 1
-DOWNLOAD_TIMEOUT = 30
+DOWNLOAD_DELAY = 0.5
+DOWNLOAD_TIMEOUT = 15
 RANDOMIZE_DOWNLOAD_DELAY = True
 
 
 # Enables scheduling storing requests queue in redis.
-SCHEDULER = "scrapy_redis.scheduler.Scheduler"
+SCHEDULER = "zhihu.scrapy_redis.scheduler.Scheduler"
 
 # Don't cleanup redis queues, allows to pause/resume crawls.
 SCHEDULER_PERSIST = True
 
 # Schedule requests using a priority queue. (default)
-SCHEDULER_QUEUE_CLASS = 'scrapy_redis.queue.SpiderPriorityQueue'
+# SCHEDULER_QUEUE_CLASS = 'scrapy_redis.queue.SpiderPriorityQueue'
 
 # Schedule requests using a queue (FIFO).
 # SCHEDULER_QUEUE_CLASS = 'scrapy_redis.queue.SpiderQueue'
 
 # Schedule requests using a stack (LIFO).
-# SCHEDULER_QUEUE_CLASS = 'scrapy_redis.queue.SpiderStack'
+SCHEDULER_QUEUE_CLASS = 'zhihu.scrapy_redis.queue.SpiderStack'
 
 # Max idle time to prevent the spider from being closed when distributed crawling.
 # This only works if queue class is SpiderQueue or SpiderStack,
 # and may also block the same time when your spider start at the first time (because the queue is empty).
-# SCHEDULER_IDLE_BEFORE_CLOSE = 10
+SCHEDULER_IDLE_BEFORE_CLOSE = 10
 
 ITEM_PIPELINES = {
     #'zhihu.pipelines.DoNothingPipeline': 300,

@@ -5,6 +5,9 @@ from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.http import Request, FormRequest
 from zhihu.items import ZhihuUserItem, ZhihuAskItem, ZhihuAnswerItem
+from scrapy import log
+from zhihu.scrapy_redis.scheduler import Scheduler
+from scrapy.conf import settings
 
 import json
 from urllib import urlencode
@@ -21,7 +24,7 @@ host = 'http://www.zhihu.com'
 class ZhihuLoginSpider(CrawlSpider):
     name = 'zhihu'
     allowed_domains = ['zhihu.com']
-
+    login_page = 'http://www.zhihu.com/login'
     start_urls = [
         "http://www.zhihu.com/lookup/people",
     ]
@@ -31,7 +34,7 @@ class ZhihuLoginSpider(CrawlSpider):
         Rule(SgmlLinkExtractor(allow=("/lookup/class/[^/]+/?$", )), follow=True, callback='parse_item'),
         Rule(SgmlLinkExtractor(allow=("/lookup/class/$", )), follow=True, callback='parse_item'),
         Rule(SgmlLinkExtractor(allow=("/lookup/people", )), callback='parse_item'),
-        Rule(SgmlLinkExtractor(allow=("/people/[^/]+/?$", )), callback='parse_user'),
+        # Rule(SgmlLinkExtractor(allow=("/people/[^/]+/?$", )), callback='parse_user'),
         Rule(SgmlLinkExtractor(allow=("/people/$", )), callback='parse_user')
     )
 
@@ -43,15 +46,44 @@ class ZhihuLoginSpider(CrawlSpider):
     def start_requests(self):
         return [FormRequest(
             "http://www.zhihu.com/login",
-            formdata={'email': 'cml_hawke0@163.com',
-                      'password': '56121353'
+            formdata={'email': settings['USERNAME'],
+                      'password': settings['PASSWORD']
             },
             callback=self.after_login
         )]
 
     def after_login(self, response):
+        # check login succeed before going on
+        if "authentication failed" in response.body:
+            self.log("Login failed", level=log.ERROR)
+            return
+        Scheduler.login = True
         for url in self.start_urls:
             yield self.make_requests_from_url(url)
+
+    # def init_request(self):
+    #     """This function is called before crawling starts."""
+    #     return Request(url=self.login_page, callback=self.login)
+    #
+    # def login(self, response):
+    #     """Generate a login request."""
+    #     return FormRequest.from_response(response,
+    #                 formdata={'email': 'cml_hawke0@163.com', 'password': '56121353'},
+    #                 callback=self.check_login_response)
+    #
+    # def check_login_response(self, response):
+    #     """Check the response returned by a login request to see if we are
+    #     successfully logged in.
+    #     """
+    #     if "logout" in response.body:
+    #         self.log("Successfully logged in. Let's start crawling!")
+    #         # Now the crawling can begin..
+    #         self.parse(response)
+    #     else:
+    #         self.log("Bad times :(")
+    #         # Something went wrong, we couldn't log in, so nothing happens.
+
+
 
     def parse_item(self, response):
         print 'parsing url: %s' % response.url
@@ -64,7 +96,10 @@ class ZhihuLoginSpider(CrawlSpider):
         print 'parsing user: %s' % response.url
         selector = Selector(response)
         user = ZhihuUserItem()
-        user['_id'] = user['username'] = response.url.split('/')[-1]
+        if(response.url.endswith('about')):
+            user['_id'] = user['username'] = response.url.split('/')[-2]
+        else:
+            user['_id'] = user['username'] = response.url.split('/')[-1]
         user['url'] = response.url
         user['nickname'] = ''.join(
             selector.xpath("//div[@class='title-section ellipsis']/a[@class='name']/text()").extract())

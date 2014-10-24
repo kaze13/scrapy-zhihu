@@ -1,11 +1,12 @@
 #!/usr/bin/python
-#-*-coding:utf-8-*-
+# -*-coding:utf-8-*-
 
 import redis
 from scrapy.utils.misc import load_object
 from dupefilter import RFPDupeFilter
-
-
+from scrapy.http import Request, FormRequest
+from scrapy import log
+from scrapy.conf import settings
 # default values
 REDIS_HOST = 'localhost'
 REDIS_PORT = 6379
@@ -17,7 +18,7 @@ DUPEFILTER_KEY = '%(spider)s:dupefilter'
 
 class Scheduler(object):
     """Redis-based scheduler"""
-
+    login = False
     def __init__(self, server, persist, queue_key, queue_cls, dupefilter_key):
         """Initialize scheduler.
 
@@ -79,10 +80,28 @@ class Scheduler(object):
         self.queue.push(request)
 
     def next_request(self):
-        request = self.queue.pop()
-        if request:
-            self.stats.inc_value('scheduler/dequeued/redis', spider=self.spider)
+        if (Scheduler.login == False):
+            request = FormRequest(
+                "http://www.zhihu.com/login",
+                formdata={'email': settings['USERNAME'],
+                          'password': settings['PASSWORD']
+                },
+                # callback=self.after_login
+            )
+            Scheduler.login = True
+
+        else:
+            request = self.queue.pop()
+            if request:
+                self.stats.inc_value('scheduler/dequeued/redis', spider=self.spider)
         return request
 
     def has_pending_requests(self):
         return len(self) > 0
+
+    # def after_login(self, response):
+    #     # check login succeed before going on
+    #     if "logout" in response.body:
+    #         self.log("Login failed", level=log.ERROR)
+    #         return
+    #     Scheduler.login = True
