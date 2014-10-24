@@ -31,7 +31,6 @@ class CustomHttpProxyMiddleware(object):
             return False
 
 
-
 class CustomUserAgentMiddleware(object):
     def process_request(self, request, spider):
         agent = random.choice(AGENTS)
