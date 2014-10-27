@@ -2,3 +2,4 @@
 deprecate/
 *.pyc
 *.log
+account.py
