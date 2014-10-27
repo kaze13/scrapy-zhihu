@@ -9,6 +9,7 @@ from scrapy import log
 from zhihu.scrapy_redis.scheduler import Scheduler
 from scrapy.conf import settings
 
+
 import json
 from urllib import urlencode
 from datetime import datetime
@@ -38,11 +39,11 @@ class ZhihuLoginSpider(CrawlSpider):
         Rule(SgmlLinkExtractor(allow=("/people/$", )), callback='parse_user')
     )
 
-    def __init__(self,proxy, *a, **kwargs):
+    def __init__(self,*a, **kwargs):
         super(ZhihuLoginSpider, self).__init__(*a, **kwargs)
         self.user_names = []
-        if(proxy):
-            settings.set('PROXY', proxy)
+        # if(proxy):
+        #     settings.set('PROXY', proxy)
 
 
     def start_requests(self):

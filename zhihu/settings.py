@@ -67,12 +67,14 @@ ITEM_PIPELINES = {
     }
 
 DOWNLOADER_MIDDLEWARES = {
-    'zhihu.misc.middleware.CustomHttpProxyMiddleware': 543,
+    # 'zhihu.misc.middleware.CustomHttpProxyMiddleware': 543,
     'zhihu.misc.middleware.CustomUserAgentMiddleware': 545,
     }
 # Specify the host and port to use when connecting to Redis (optional).
-REDIS_HOST = 'localhost'
+REDIS_HOST = 'rey'
 REDIS_PORT = 6379
+MONGO_HOST = 'rey'
+MONGO_PORT = 27017
 
 
 

@@ -7,6 +7,9 @@ from dupefilter import RFPDupeFilter
 from scrapy.http import Request, FormRequest
 from scrapy import log
 from scrapy.conf import settings
+
+import zhihu.account as account
+
 # default values
 REDIS_HOST = 'localhost'
 REDIS_PORT = 6379
@@ -83,8 +86,8 @@ class Scheduler(object):
         if (Scheduler.login == False):
             request = FormRequest(
                 "http://www.zhihu.com/login",
-                formdata={'email': settings['USERNAME'],
-                          'password': settings['PASSWORD']
+                formdata={'email': account['USERNAME'],
+                          'password': account['PASSWORD']
                 },
                 # callback=self.after_login
             )

@@ -6,9 +6,11 @@
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
 from zhihu.items import ZhihuUserItem, ZhihuAskItem, ZhihuFollowersItem, ZhihuFolloweesItem, ZhihuAnswerItem
+import zhihu.settings as setting
 
 import json
 from scrapy.conf import settings
+
 
 class DoNothingPipeline(object):
 
@@ -52,7 +54,7 @@ class JsonWithEncodingPipeline(object):
 class MongoDBPipeline(object):
     def __init__(self):
         import pymongo
-        connection = pymongo.Connection("localhost", 27017)
+        connection = pymongo.Connection(setting.MONGO_HOST, setting.MONGO_PORT)
         self.db = connection["zhihu"]
         self.zh_user_col = self.db["zh_user"]
         self.zh_ask_col = self.db["zh_ask"]
