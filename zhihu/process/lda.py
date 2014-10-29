@@ -1,5 +1,6 @@
 __author__ = 'fc'
 import logging,gensim,pymongo,jieba
+from operator import itemgetter
 # from collections import Counter
 
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO )
@@ -35,6 +36,7 @@ logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=lo
 DICT_FILE = "zhihuDict.txt"
 CORPUS_FILE = 'zhihuCorpus.mm'
 STOP_FILE = 'stoplist.txt'
+LDA_FILE = 'lda.mm'
 
 def loadStopList(stopPath):
     stoplist = set([])
@@ -90,7 +92,7 @@ def buildCorpus(collection, stoplist, corpusPath, dictPath):
     i = 0
     for item in collection.find():
         i += 1
-        seglist = jieba.cut(item['title'].strip())
+        seglist = jieba.cut(cleanString(item['title']))
         tokens = [seg.lower() for seg in seglist if seg not in stoplist and checkWord(seg)]
         segment = dict.doc2bow(tokens)
         documents.append(segment)
@@ -112,15 +114,44 @@ def preprocess():
     buildDictionary(connection['zhihu']['zh_ask'],stoplist,DICT_FILE)
     print 'start build corpus'
     buildCorpus(connection['zhihu']['zh_ask'],stoplist,CORPUS_FILE,DICT_FILE)
+    if connection != None:
+        connection.close()
 
-def lda(corpusPath, dictPath):
+def lda(corpusPath, dictPath, ldaPath):
     dict = gensim.corpora.Dictionary.load_from_text(dictPath)
     print dict
     mm = gensim.corpora.MmCorpus(corpusPath)
     print mm
     lda = gensim.models.LdaModel(corpus=mm, id2word=dict, num_topics=100, update_every=1, chunksize=10000, passes=1)
     lda.print_topics(20)
+    lda.save(ldaPath)
 
-preprocess()
-lda(CORPUS_FILE, DICT_FILE)
+def inference(dictPath,ldaPath):
+    stoplist = loadStopList(STOP_FILE)
+    lda = gensim.models.LdaModel.load(ldaPath)
+    dict = gensim.corpora.Dictionary.load_from_text(dictPath)
+    lda.print_topics(20)
+    connection = pymongo.Connection('rey', 27017)
+    collection = connection['zhihu']['zh_ask']
+    i = 0
+    for item in collection.find():
+        i = i + 1
+        if i % 1000 == 0:
+            print i
+        seglist = jieba.cut(cleanString(item['title']))
+        tokens = [seg.lower() for seg in seglist if seg not in stoplist and checkWord(seg)]
+        segment = dict.doc2bow(tokens)
+        doc_lda = lda[segment]
+        # use hard cluster method
+        if len(doc_lda) > 0:
+            topic = max(doc_lda, key=itemgetter(1))[0]
+        # store topic
+        collection.update({'_id':item['_id']},{"$set" : {"topic" : topic}})
+    if connection != None:
+        connection.close()
+
+# preprocess()
+# lda(CORPUS_FILE, DICT_FILE,LDA_FILE)
+
+inference(DICT_FILE,LDA_FILE)
 # print loadStopList(STOP_FILE)
