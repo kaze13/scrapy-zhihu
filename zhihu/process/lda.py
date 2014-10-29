@@ -1,5 +1,6 @@
 __author__ = 'fc'
 import logging,gensim,pymongo,jieba
+# from collections import Counter
 
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO )
 
@@ -48,7 +49,7 @@ def checkWord(word):
     return True
 
 def cleanString(word):
-    return word.replace('\t',' ').replace('\n',' ')
+    return word.replace('\t',' ').replace('\n',' ').replace('\r',' ')
 
 
 def buildDictionary(collection, stoplist, dictPath):
@@ -62,10 +63,26 @@ def buildDictionary(collection, stoplist, dictPath):
         before = [seg.lower() for seg in seglist]
         tokens = [seg.lower() for seg in before if seg not in stoplist and checkWord(seg)]
         wordset.append(tokens)
+    # TODO think about how to remove td=1 token in memory
+    # count = Counter(all_tokens = sum(wordset, []))
+    # token_once = set(word[0] for word in count.items() if word[1] == 1)
+    # corpus = [[word for word in text if word not in token_once] for text in wordset]
+    # dictionary = gensim.corpora.Dictionary(corpus)
 
-    #corpus = set(word for word in wordset if wordset.count(word) > 1)
+
     dictionary = gensim.corpora.Dictionary(wordset)
     dictionary.save_as_text(dictPath)
+    # remove td=1 token in text file
+    wordset = None
+    dictset = []
+    with open(dictPath, 'r') as f:
+        for line in f.readlines():
+            if(int(line.split('\t')[-1].replace('\n','')) > 1):
+                dictset.append(line)
+
+    with open(dictPath, 'w') as f:
+        for line in dictset:
+            f.write(line)
 
 def buildCorpus(collection, stoplist, corpusPath, dictPath):
     documents = []
