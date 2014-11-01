@@ -86,8 +86,8 @@ class Scheduler(object):
         if (Scheduler.login == False):
             request = FormRequest(
                 "http://www.zhihu.com/login",
-                formdata={'email': account['USERNAME'],
-                          'password': account['PASSWORD']
+                formdata={'email': account.USERNAME,
+                          'password': account.PASSWORD
                 },
                 # callback=self.after_login
             )
