@@ -1,8 +1,6 @@
 __author__ = 'fc'
 import logging,gensim,pymongo,jieba
-from sklearn.neighbors import NearestNeighbors
 from operator import itemgetter
-import numpy as np
 # from collections import Counter
 
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO )
@@ -123,48 +121,20 @@ class LDAWrapper:
                 # store topic
                 collection.update({'_id':item['_id']},{"$set" : {"topic" : topic, "topics" : doc_lda}})
 
-class NNS:
-    '''
-       This is the nearest neighbour search algorithm
-    '''
-    def __init__(self):
-        pass
-
-    def search(self, collection, topicNum = 100):
-        topicId = []
-        topicArray = []
-        print 'start collect'
-        for item in collection.find():
-            topicId.append(item['url'])
-            topics = [0] * int(topicNum)
-            if item.get('topics') is not None:
-                for tuple in item['topics']:
-                    topics[tuple[0]] = tuple[1]
-                topicArray.append(topics)
-
-        print 'start nns'
-        nbrs = NearestNeighbors(n_neighbors=2, algorithm='ball_tree').fit(topicArray)
-        print 'judge '
-        nnset = [[i for i, doc in enumerate(vector) if doc == 1 ] for vector in nbrs.kneighbors_graph(topicArray).toarray()]
-        print 'update'
-        for i,recs in enumerate(nnset):
-            print i , ':',recs
-            collection.update({'url':topicId[i]},{"$set" : {"rec" : [topicId[key] for key in recs]}})
-
 
 def run():
     connection = pymongo.Connection('rey', 27017)
     if connection != None:
         collection = connection['zhihu']['zh_ask']
-        # preprocess = PreProcess(STOP_FILE, DICT_FILE, CORPUS_FILE)
-        # preprocess.preprocess(collection)
+        preprocess = PreProcess(STOP_FILE, DICT_FILE, CORPUS_FILE)
+        preprocess.preprocess(collection)
 
-        # lda = LDAWrapper(preprocess)
-        # lda.loadLDA(LDA_FILE)
-        # lda.train()
-        # lda.inference(collection)
-        nns = NNS()
-        nns.search(collection)
+        lda = LDAWrapper(preprocess)
+        lda.loadLDA(LDA_FILE)
+        lda.train()
+        lda.inference(collection)
+        # nns = NNS()
+        # nns.search(collection)
         connection.close()
 
 def revert():
