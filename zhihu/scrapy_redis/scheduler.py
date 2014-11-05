@@ -84,6 +84,7 @@ class Scheduler(object):
 
     def next_request(self):
         if (Scheduler.login == False):
+            print 'need login! login as ' + account.USERNAME
             request = FormRequest(
                 "http://www.zhihu.com/login",
                 formdata={'email': account.USERNAME,
@@ -92,7 +93,6 @@ class Scheduler(object):
                 # callback=self.after_login
             )
             Scheduler.login = True
-
         else:
             request = self.queue.pop()
             if request:

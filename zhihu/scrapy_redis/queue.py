@@ -100,6 +100,8 @@ class SpiderStack(Base):
 
     def push(self, request):
         """Push a request"""
+        print 'Before encode: %s' % (request)
+        print 'After encode: %s' % (self._encode_request(request))
         self.server.lpush(self.key, self._encode_request(request))
 
     def pop(self):

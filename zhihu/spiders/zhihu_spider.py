@@ -23,11 +23,21 @@ host = 'http://www.zhihu.com'
 
 
 class ZhihuLoginSpider(CrawlSpider):
-    name = 'zhihu'
+    name = 'zhihu4'
     allowed_domains = ['zhihu.com']
     login_page = 'http://www.zhihu.com/login'
     start_urls = [
         "http://www.zhihu.com/lookup/people",
+        "http://www.zhihu.com/question/19571587",
+        "http://www.zhihu.com/question/20085412",
+        "http://www.zhihu.com/question/20866403",
+        "http://www.zhihu.com/question/20683575",
+        "http://www.zhihu.com/question/20016608",
+        "http://www.zhihu.com/question/19758086",
+        "http://www.zhihu.com/question/20464214",
+        "http://www.zhihu.com/question/25401937",
+        "http://www.zhihu.com/question/21602591",
+        "http://www.zhihu.com/question/19894795"
     ]
 
     # 使用rule时候，不要定义parse方法

@@ -27,7 +27,7 @@ class Scheduler(object):
         host = settings.get('QUEUE_HOST', QUEUE_HOST)
         port = settings.get('QUEUE_PORT', QUEUE_PORT)
         persist = settings.get('SCHEDULER_PERSIST', SCHEDULER_PERSIST)
-        queue_cls = settings.get('SCHEDULER_QUEUE_CLASS', SCHEDULER_QUEUE_CLASS)
+        queue_cls = load_object(settings.get('SCHEDULER_QUEUE_CLASS', SCHEDULER_QUEUE_CLASS))
         server = NettyMongo(host,port)
         return cls(server, persist, queue_cls)
 

@@ -54,8 +54,8 @@ class JsonWithEncodingPipeline(object):
 class MongoDBPipeline(object):
     def __init__(self):
         import pymongo
-        connection = pymongo.Connection(setting.MONGO_HOST, setting.MONGO_PORT)
-        self.db = connection["zhihu"]
+        constr = "mongodb://"+setting.MONGO_HOST+":"+ str(setting.MONGO_PORT) + "/zhihu"
+        self.db = pymongo.MongoClient(constr)
         self.zh_user_col = self.db["zh_user"]
         self.zh_ask_col = self.db["zh_ask"]
         self.zh_answer_col = self.db["zh_answer"]
@@ -96,12 +96,6 @@ class MongoDBPipeline(object):
 
         elif isinstance(item, ZhihuAnswerItem):
             self.saveOrUpdate(self.zh_answer_col,item,spider)
-
-        elif isinstance(item, GithubUserItem):
-            self.saveOrUpdate(self.gh_user_col,item,spider)
-
-        elif isinstance(item, GithubRepoItem):
-            self.saveOrUpdate(self.gh_repo_col,item,spider)
 
         return item
 

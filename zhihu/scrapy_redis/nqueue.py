@@ -45,4 +45,3 @@ class SpiderQueue(Base):
             return self._decode_request(data)
 
 
-

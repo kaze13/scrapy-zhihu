@@ -40,7 +40,8 @@ RANDOMIZE_DOWNLOAD_DELAY = True
 
 
 # Enables scheduling storing requests queue in redis.
-SCHEDULER = "zhihu.scrapy_redis.scheduler.Scheduler"
+#SCHEDULER = "zhihu.scrapy_redis.scheduler.Scheduler"
+SCHEDULER = "zhihu.scrapy_redis.nscheduler.Scheduler"
 
 # Don't cleanup redis queues, allows to pause/resume crawls.
 SCHEDULER_PERSIST = True
@@ -52,7 +53,8 @@ SCHEDULER_PERSIST = True
 # SCHEDULER_QUEUE_CLASS = 'scrapy_redis.queue.SpiderQueue'
 
 # Schedule requests using a stack (LIFO).
-SCHEDULER_QUEUE_CLASS = 'zhihu.scrapy_redis.queue.SpiderStack'
+#SCHEDULER_QUEUE_CLASS = 'zhihu.scrapy_redis.queue.SpiderStack'
+SCHEDULER_QUEUE_CLASS = 'zhihu.scrapy_redis.nqueue.SpiderQueue'
 
 # Max idle time to prevent the spider from being closed when distributed crawling.
 # This only works if queue class is SpiderQueue or SpiderStack,
@@ -71,10 +73,12 @@ DOWNLOADER_MIDDLEWARES = {
     'zhihu.misc.middleware.CustomUserAgentMiddleware': 545,
     }
 # Specify the host and port to use when connecting to Redis (optional).
-REDIS_HOST = 'rey'
+REDIS_HOST = 'localhost'
 REDIS_PORT = 6379
-MONGO_HOST = 'rey'
+MONGO_HOST = '172.26.142.17'
 MONGO_PORT = 27017
+QUEUE_HOST = 'localhost'
+QUEUE_PORT = 10086 
 
 
 
