@@ -20,7 +20,6 @@ class NettyMongo(object):
         try:
             self.tn.write(string + DELIMITER)
             res = self.tn.read_until(DELIMITER)[:-2]
-            print 'push: %s' % res
         finally:
             self.lock.release()
 
@@ -29,11 +28,10 @@ class NettyMongo(object):
         try:
             self.tn.write('GET' + DELIMITER)
             res = self.tn.read_until(DELIMITER)[:-2]
-            print 'pop: %s' % res
-            if len(res):
-                return None
-            else:
+            if len(res) > 0:
                 return res
+            else:
+                return None
         finally:
             self.lock.release()
 

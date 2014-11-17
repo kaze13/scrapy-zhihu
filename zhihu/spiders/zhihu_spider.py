@@ -23,7 +23,7 @@ host = 'http://www.zhihu.com'
 
 
 class ZhihuLoginSpider(CrawlSpider):
-    name = 'zhihu4'
+    name = 'zhihu'
     allowed_domains = ['zhihu.com']
     login_page = 'http://www.zhihu.com/login'
     start_urls = [

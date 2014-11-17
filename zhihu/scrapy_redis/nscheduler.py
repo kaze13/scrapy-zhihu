@@ -13,7 +13,7 @@ SCHEDULER_PERSIST = False
 SCHEDULER_QUEUE_CLASS = 'zhihu.scrapy_redis.nqueue.SpiderQueue'
 
 class Scheduler(object):
-    login = False
+    login = True # False
     def __init__(self, server, persist, queue_cls):
         self.server = server
         self.persist = persist

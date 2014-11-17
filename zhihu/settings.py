@@ -34,7 +34,7 @@ DNSCACHE_ENABLED = True
 
 COOKIES_DEBUG = False
 
-DOWNLOAD_DELAY = 0.5
+DOWNLOAD_DELAY = 2
 DOWNLOAD_TIMEOUT = 15
 RANDOMIZE_DOWNLOAD_DELAY = True
 
@@ -64,7 +64,7 @@ SCHEDULER_IDLE_BEFORE_CLOSE = 10
 ITEM_PIPELINES = {
     #'zhihu.pipelines.DoNothingPipeline': 300,
     #'zhihu.pipelines.JsonWithEncodingPipeline': 300,
-    'scrapy_redis.pipelines.RedisPipeline':200,
+#    'scrapy_redis.pipelines.RedisPipeline':200,
     'zhihu.pipelines.MongoDBPipeline': 300,
     }
 
@@ -73,9 +73,9 @@ DOWNLOADER_MIDDLEWARES = {
     'zhihu.misc.middleware.CustomUserAgentMiddleware': 545,
     }
 # Specify the host and port to use when connecting to Redis (optional).
-REDIS_HOST = 'localhost'
-REDIS_PORT = 6379
-MONGO_HOST = '172.26.142.17'
+#REDIS_HOST = 'localhost'
+#REDIS_PORT = 6379
+MONGO_HOST = '172.26.142.14'
 MONGO_PORT = 27017
 QUEUE_HOST = 'localhost'
 QUEUE_PORT = 10086 

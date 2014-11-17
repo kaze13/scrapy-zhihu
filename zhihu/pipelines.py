@@ -6,6 +6,7 @@
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
 from zhihu.items import ZhihuUserItem, ZhihuAskItem, ZhihuFollowersItem, ZhihuFolloweesItem, ZhihuAnswerItem
+from zhihu.douban_items import DoubanmusicItem,DoubanReviewItem
 import zhihu.settings as setting
 
 import json
@@ -55,7 +56,7 @@ class MongoDBPipeline(object):
     def __init__(self):
         import pymongo
         constr = "mongodb://"+setting.MONGO_HOST+":"+ str(setting.MONGO_PORT) + "/zhihu"
-        self.db = pymongo.MongoClient(constr)
+        self.db = pymongo.MongoClient(constr)['zhihu']
         self.zh_user_col = self.db["zh_user"]
         self.zh_ask_col = self.db["zh_ask"]
         self.zh_answer_col = self.db["zh_answer"]
@@ -64,6 +65,9 @@ class MongoDBPipeline(object):
 
         self.gh_user_col = self.db["gh_user"]
         self.gh_repo_col = self.db["gh_repo"]
+
+        self.db_music_item = self.db["db_music_item"]
+        self.db_music_review = self.db["db_music_review"]
 
     def saveOrUpdate(self,collection,item,spider):
         _id= dict(item).get("_id")
@@ -81,6 +85,10 @@ class MongoDBPipeline(object):
         else:
             collection.insert(dict(item))
 
+    def saveDouban(self, collection, item):
+        print 'Collection: %s' % collection
+        collection.insert(dict(item))
+
     def process_item(self, item, spider):
         if isinstance(item, ZhihuUserItem):
             self.saveOrUpdate(self.zh_user_col,item,spider)
@@ -96,6 +104,10 @@ class MongoDBPipeline(object):
 
         elif isinstance(item, ZhihuAnswerItem):
             self.saveOrUpdate(self.zh_answer_col,item,spider)
+        elif isinstance(item, DoubanmusicItem):
+            self.saveDouban(self.db_music_item, item)
+        elif isinstance(item, DoubanReviewItem):
+            self.saveDouban(self.db_music_review, item)
 
         return item
 
