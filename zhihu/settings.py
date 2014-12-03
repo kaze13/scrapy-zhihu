@@ -75,8 +75,7 @@ DOWNLOADER_MIDDLEWARES = {
 # Specify the host and port to use when connecting to Redis (optional).
 #REDIS_HOST = 'localhost'
 #REDIS_PORT = 6379
-MONGO_HOST = '172.26.142.14'
-MONGO_PORT = 27017
+MONGO_HOSTS = 'mongodb://172.26.142.14,172.26.142.17/zhihu?replicaSet=rs0'
 QUEUE_HOST = 'linode'
 QUEUE_PORT = 10086 
 

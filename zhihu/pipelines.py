@@ -55,11 +55,7 @@ class JsonWithEncodingPipeline(object):
 class MongoDBPipeline(object):
     def __init__(self):
         import pymongo
-	if setting.MONGO_USER is None or len(setting.MONGO_USER) == 0 or setting.MONGO_PASSWORD is None or len(setting.MONGO_PASSWORD) == 0:
-            constr = "mongodb://" + setting.MONGO_HOST+":"+ str(setting.MONGO_PORT) + "/zhihu"
-        else:
-            constr = "mongodb://" + setting.MONGO_USER + ":" + setting.MONGO_PASSWORD + "@" + setting.MONGO_HOST + ":" + str(setting.MONGO_PORT) + "/admin"
-
+        constr = setting.MONGO_HOSTS 
         self.db = pymongo.MongoClient(constr)['zhihu']
         self.zh_user_col = self.db["zh_user"]
         self.zh_ask_col = self.db["zh_ask"]
