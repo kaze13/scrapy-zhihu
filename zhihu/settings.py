@@ -10,11 +10,7 @@
 
 BOT_NAME = 'zhihu'
 
-# USERNAME = 'cml_hawke0@163.com'
-# PASSWORD = '56121353'
 
-USERNAME = 'yyluo_sep.27@hotmail.com'
-PASSWORD = 'damiyy66526844'
 
 SPIDER_MODULES = ['zhihu.spiders']
 NEWSPIDER_MODULE = 'zhihu.spiders'
